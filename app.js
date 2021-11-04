@@ -1,6 +1,7 @@
 const loginForm = document.querySelector('#login-form')
 const loginInput = document.querySelector('#login-form input')
 const greeting = document.querySelector('#greeting')
+const logoutForm = document.querySelector('#logout')
 
 const HIDDEN_CLASSNAME = 'hidden'
 const USERNAME_KEY = 'username'
@@ -17,6 +18,7 @@ function onLoginSubmit(event) {
 function paintGreetings(username) {
   greeting.innerText = `Hello ${username}` // 비어있는 h1 요소 안에 텍스트 추가
   greeting.classList.remove(HIDDEN_CLASSNAME)
+  logoutForm.classList.remove(HIDDEN_CLASSNAME)
 }
 
 // 가장 먼저 실행되는 라인
@@ -31,3 +33,10 @@ if (savedUsername === null) {
   // show the greetings
   paintGreetings(savedUsername) // input값이 아닌 저장 되어있는 local storage로부터 정보가 온다
 }
+
+function removeStorage() {
+  localStorage.removeItem(USERNAME_KEY)
+  location.reload()
+}
+
+logoutForm.addEventListener('click', removeStorage)
