@@ -2,13 +2,24 @@ const toDoForm = document.getElementById('todo-form')
 const toDoInput = toDoForm.querySelector('input')
 const toDoList = document.getElementById('todo-list')
 
+function deleteToDo(event) {
+  // click 또한 event에 대한 정보도 가지고 있다.
+  // todo 리스트 목록 제거
+  const li = event.target.parentElement // 내가 삭제하고 싶은 li
+  li.remove()
+}
+
 function paintToDo(newTodo) {
   // todo 리스트 목록 생성
-  const li = document.createElement('li') // (1) li를 만든다.
-  const span = document.createElement('span') // (2) span을 만든다.
-  li.appendChild(span) // (3) li는 span이라는 자식을 가지게 된다. 즉, span을 li 내부에 집어넣는다.
-  span.innerText = newTodo // (4) toDoInput.value 의 값을 저장시킨 변수 newTodo의 텍스트를 span 내부에 넣는다.
-  toDoList.appendChild(li) // (5) toDoList 안에 li를 추가한다.
+  const li = document.createElement('li')
+  const span = document.createElement('span')
+  span.innerText = newTodo
+  const button = document.createElement('button')
+  button.innerText = '🗑'
+  button.addEventListener('click', deleteToDo)
+  li.appendChild(span)
+  li.appendChild(button)
+  toDoList.appendChild(li)
 }
 
 function handleToDoSubmit(event) {
