@@ -2,6 +2,12 @@ const toDoForm = document.getElementById('todo-form')
 const toDoInput = toDoForm.querySelector('input')
 const toDoList = document.getElementById('todo-list')
 
+const toDos = []
+
+function saveToDos() {
+  localStorage.setItem('todos', JSON.stringify(toDos)) // toDos 배열의 내용을 localstroage에 넣는다. (string으로 변환)
+}
+
 function deleteToDo(event) {
   // click 또한 event에 대한 정보도 가지고 있다.
   // todo 리스트 목록 제거
@@ -26,7 +32,9 @@ function handleToDoSubmit(event) {
   event.preventDefault()
   const newTodo = toDoInput.value // input의 value를 새로운 변수에 복사
   toDoInput.value = '' // 비운다고 해서 newTodo 가 비워지는 것을 의미하는 것은 아니다. input창을 비워준다.
+  toDos.push(newTodo)
   paintToDo(newTodo)
+  saveToDos()
 }
 
 toDoForm.addEventListener('submit', handleToDoSubmit)
