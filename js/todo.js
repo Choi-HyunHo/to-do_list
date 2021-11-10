@@ -2,10 +2,12 @@ const toDoForm = document.getElementById('todo-form')
 const toDoInput = toDoForm.querySelector('input')
 const toDoList = document.getElementById('todo-list')
 
+const TODOS_KEY = 'todos'
+
 const toDos = []
 
 function saveToDos() {
-  localStorage.setItem('todos', JSON.stringify(toDos)) // toDos 배열의 내용을 localstroage에 넣는다. (string으로 변환)
+  localStorage.setItem(TODOS_KEY, JSON.stringify(toDos)) // toDos 배열의 내용을 localstroage에 넣는다. (string으로 변환)
 }
 
 function deleteToDo(event) {
@@ -38,3 +40,15 @@ function handleToDoSubmit(event) {
 }
 
 toDoForm.addEventListener('submit', handleToDoSubmit)
+
+function sayHello(item) {
+  // JavaScript 는 지금 처리되고 있는 item을 제공 해준다.
+  console.log('this is the turn of', item)
+}
+
+const savedToDos = localStorage.getItem(TODOS_KEY)
+
+if (savedToDos !== null) {
+  const parsedToDos = JSON.parse(savedToDos)
+  parsedToDos.forEach(sayHello) // forEach는 array의 각 item에 대해 function을 실행하게 해준다
+}
