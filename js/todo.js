@@ -4,7 +4,7 @@ const toDoList = document.getElementById('todo-list')
 
 const TODOS_KEY = 'todos'
 
-const toDos = []
+let toDos = [] // 항상 빈 array 로 시작
 
 function saveToDos() {
   localStorage.setItem(TODOS_KEY, JSON.stringify(toDos)) // toDos 배열의 내용을 localstroage에 넣는다. (string으로 변환)
@@ -31,24 +31,21 @@ function paintToDo(newTodo) {
 }
 
 function handleToDoSubmit(event) {
+  // (1)toDo 를 submit 할 때마다
   event.preventDefault()
   const newTodo = toDoInput.value // input의 value를 새로운 변수에 복사
   toDoInput.value = '' // 비운다고 해서 newTodo 가 비워지는 것을 의미하는 것은 아니다. input창을 비워준다.
-  toDos.push(newTodo)
+  toDos.push(newTodo) // (2) newTodo 를 빈 array 였던 toDos array 에 push
   paintToDo(newTodo)
   saveToDos()
 }
 
 toDoForm.addEventListener('submit', handleToDoSubmit)
 
-function sayHello(item) {
-  // JavaScript 는 지금 처리되고 있는 item을 제공 해준다.
-  console.log('this is the turn of', item)
-}
-
 const savedToDos = localStorage.getItem(TODOS_KEY)
 
 if (savedToDos !== null) {
   const parsedToDos = JSON.parse(savedToDos)
-  parsedToDos.forEach(sayHello) // forEach는 array의 각 item에 대해 function을 실행하게 해준다
+  toDos = parsedToDos // 이전에 있던 toDo 를 복원
+  parsedToDos.forEach(paintToDo) // forEach는 array의 각 item에 대해 function을 실행하게 해준다
 }
