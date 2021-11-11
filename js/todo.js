@@ -20,8 +20,9 @@ function deleteToDo(event) {
 function paintToDo(newTodo) {
   // todo 리스트 목록 생성
   const li = document.createElement('li')
+  li.id = newTodo.id
   const span = document.createElement('span')
-  span.innerText = newTodo
+  span.innerText = newTodo.text // newTodoObj의 text
   const button = document.createElement('button')
   button.innerText = '🗑'
   button.addEventListener('click', deleteToDo)
@@ -35,8 +36,12 @@ function handleToDoSubmit(event) {
   event.preventDefault()
   const newTodo = toDoInput.value // input의 value를 새로운 변수에 복사
   toDoInput.value = '' // 비운다고 해서 newTodo 가 비워지는 것을 의미하는 것은 아니다. input창을 비워준다.
-  toDos.push(newTodo) // (2) newTodo 를 빈 array 였던 toDos array 에 push
-  paintToDo(newTodo)
+  const newTodoObj = {
+    text: newTodo,
+    id: Date.now(),
+  }
+  toDos.push(newTodoObj)
+  paintToDo(newTodoObj)
   saveToDos()
 }
 
