@@ -15,6 +15,9 @@ function deleteToDo(event) {
   // todo 리스트 목록 제거
   const li = event.target.parentElement // 내가 삭제하고 싶은 li
   li.remove()
+  toDos = toDos.filter((toDo) => toDo.id !== parseInt(li.id)) // toDo는 toDos DB에 있는 요소 중 하나
+  // 클릭한 li.id와 다른 toDo는 남겨두고 싶다. toDo.id 는 number 타입
+  saveToDos()
 }
 
 function paintToDo(newTodo) {
