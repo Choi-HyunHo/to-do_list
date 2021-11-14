@@ -9,24 +9,34 @@
   </head>
   <body>
     <div id="bg"></div>
-    <form id="login-form" class="hidden">
-      <input
-        required
-        maxlength="15"
-        type="text"
-        placeholder="What is your name?"
-      />
-      <button>Log In</button>
-    </form>
-    <h1 id="greeting" class="hidden"></h1>
-    <form id="todo-form">
-      <input type="text" placeholder="Write a To Do and Press Enter" required />
-    </form>
-    <ul id="todo-list"></ul>
-    <h2 id="clock"></h2>
-    <form id="logout" class="hidden">
-      <button type="submit">Log Out</button>
-    </form>
+    <div class="clock-position">
+      <h2 id="clock" class="clock-style"></h2>
+    </div>
+    <div class="login-style">
+      <form id="login-form" class="hidden">
+        <input
+          required
+          maxlength="15"
+          type="text"
+          placeholder="What is your name?"
+        />
+        <button class="form-btn">Sign In</button>
+      </form>
+    </div>
+    <h1 id="greeting" class="hidden greeting-style"></h1>
+    <div class="logout-style">
+      <form id="logout" class="hidden">
+        <button type="submit" class="form-btn logout-btn">Sign Up</button>
+      </form>
+    </div>
+    <div class="todo-form__style">
+      <form id="todo-form" class="hidden">
+        <input type="text" placeholder="To-Do List" required />
+      </form>
+    </div>
+    <div class="todo-style">
+      <ul id="todo-list"></ul>
+    </div>
     <div id="quote">
       <span></span>
       <span></span>

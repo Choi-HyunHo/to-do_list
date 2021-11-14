@@ -55,3 +55,120 @@ li {
   object-fit: cover;
   -webkit-filter: brightness(0.6);
 }
+
+/* clock */
+.clock-position {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 50px 0 100px 0;
+}
+.clock-style {
+  color: white;
+  font-size: 70px;
+}
+
+/* login-form */
+.login-style,
+.greeting-style {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logout-style {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#greeting {
+  color: white;
+  font-size: 28px;
+}
+
+.logout-btn {
+  margin: 20px 0 50px;
+}
+
+#login-form input {
+  background-color: inherit;
+  border: none;
+  color: white;
+  font-size: 25px;
+  border-bottom: 2px wheat solid;
+  margin-right: 30px;
+}
+
+input::placeholder {
+  color: white;
+  text-align: center;
+}
+
+.form-btn {
+  background: inherit;
+  color: wheat;
+  border: none;
+  position: relative;
+  height: 60px;
+  font-size: 1.6em;
+  padding: 0 2em;
+  cursor: pointer;
+  transition: 800ms ease all;
+  outline: none;
+}
+
+.form-btn:hover {
+  background: inherit;
+  color: burlywood;
+}
+
+.form-btn:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 2px;
+  width: 0;
+  background: wheat;
+  transition: 400ms ease all;
+}
+
+.form-btn:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  width: 0;
+  background: wheat;
+  transition: 400ms ease all;
+}
+
+.form-btn:hover:before,
+.form-btn:hover:after {
+  width: 100%;
+  transition: 800ms ease all;
+}
+
+/* to-do */
+.todo-form__style {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#todo-form input {
+  background-color: inherit;
+  border: none;
+  color: white;
+  font-size: 25px;
+  border-bottom: 2px wheat solid;
+  margin-bottom: 30px;
+}
+
+.todo-style {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
