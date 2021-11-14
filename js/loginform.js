@@ -2,6 +2,7 @@ const loginForm = document.querySelector('#login-form')
 const loginInput = document.querySelector('#login-form input')
 const greeting = document.querySelector('#greeting')
 const logoutForm = document.querySelector('#logout')
+const todo = document.querySelector('#todo-form')
 
 const HIDDEN_CLASSNAME = 'hidden'
 const USERNAME_KEY = 'username'
@@ -19,6 +20,7 @@ function paintGreetings(username) {
   greeting.innerText = `Hello ${username}` // 비어있는 h1 요소 안에 텍스트 추가
   greeting.classList.remove(HIDDEN_CLASSNAME)
   logoutForm.classList.remove(HIDDEN_CLASSNAME)
+  todo.classList.remove(HIDDEN_CLASSNAME)
 }
 
 // 가장 먼저 실행되는 라인
