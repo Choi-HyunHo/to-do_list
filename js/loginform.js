@@ -17,7 +17,7 @@ function onLoginSubmit(event) {
 }
 
 function paintGreetings(username) {
-  greeting.innerText = `Hello ${username}` // 비어있는 h1 요소 안에 텍스트 추가
+  greeting.innerText = `Have a nice day!! ${username}` // 비어있는 h1 요소 안에 텍스트 추가
   greeting.classList.remove(HIDDEN_CLASSNAME)
   logoutForm.classList.remove(HIDDEN_CLASSNAME)
   todo.classList.remove(HIDDEN_CLASSNAME)
