@@ -84,7 +84,7 @@ li {
 
 #greeting {
   color: white;
-  font-size: 28px;
+  font-size: 30px;
 }
 
 .logout-btn {
@@ -95,7 +95,7 @@ li {
   background-color: inherit;
   border: none;
   color: white;
-  font-size: 25px;
+  font-size: 30px;
   border-bottom: 2px wheat solid;
   margin-right: 30px;
 }
@@ -171,4 +171,21 @@ input::placeholder {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+li {
+  margin-bottom: 10px;
+}
+
+li span {
+  font-size: 25px;
+  color: white;
+}
+
+li button {
+  background: inherit;
+  cursor: pointer;
+  border: none;
+  font-size: 25px;
+  margin-right: 30px;
 }
