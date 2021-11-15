@@ -24,13 +24,13 @@ function paintToDo(newTodo) {
   // todo 리스트 목록 생성
   const li = document.createElement('li')
   li.id = newTodo.id
+  const button = document.createElement('button')
+  button.innerText = '❌'
   const span = document.createElement('span')
   span.innerText = newTodo.text // newTodoObj의 text
-  const button = document.createElement('button')
-  button.innerText = '🗑'
   button.addEventListener('click', deleteToDo)
-  li.appendChild(span)
   li.appendChild(button)
+  li.appendChild(span)
   toDoList.appendChild(li)
 }
 
