@@ -5,6 +5,8 @@ const logoutForm = document.querySelector('#logout')
 const todo = document.querySelector('#todo-form')
 const todoStyle = document.querySelector('#todo-list')
 const peopleText = document.querySelector('#quote-box')
+const container = document.querySelector('#container')
+const containerTwo = document.querySelector('#container-2')
 
 const HIDDEN_CLASSNAME = 'hidden'
 const USERNAME_KEY = 'username'
@@ -25,6 +27,8 @@ function paintGreetings(username) {
   todo.classList.remove(HIDDEN_CLASSNAME)
   todoStyle.classList.remove(HIDDEN_CLASSNAME)
   peopleText.classList.remove(HIDDEN_CLASSNAME)
+  container.classList.remove(HIDDEN_CLASSNAME)
+  containerTwo.classList.remove(HIDDEN_CLASSNAME)
 }
 
 // 가장 먼저 실행되는 라인
