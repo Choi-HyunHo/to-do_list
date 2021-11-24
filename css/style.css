@@ -196,6 +196,28 @@ input::placeholder {
   opacity: 0.4;
 }
 
+.todo-box2 {
+  width: 300px;
+  height: 350px;
+  border: 2px solid bisque;
+  border-radius: 20px;
+  background-color: blanchedalmond;
+  display: flex;
+  justify-content: center;
+}
+
+.noresize {
+  resize: none; /* 사용자 임의 변경 불가 */
+}
+
+.style {
+  width: 300px;
+  height: 345px;
+  border-radius: 20px;
+  background-color: inherit;
+  border: none;
+}
+
 .icon-box {
   margin: 30px;
   display: grid;
