@@ -61,7 +61,7 @@ li {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 50px 0 100px 0;
+  margin: 30px 0 60px 0;
 }
 .clock-style {
   color: white;
@@ -177,12 +177,36 @@ input::placeholder {
   overflow: scroll;
   -ms-overflow-style: none;
   border: 2px solid bisque;
+  border-radius: 20px;
   width: 300px;
   height: 350px;
+  margin: 0 50px;
 }
 
 ::-webkit-scrollbar {
   display: none;
+}
+
+.todo-box1 {
+  width: 300px;
+  height: 350px;
+  border: 2px solid bisque;
+  border-radius: 20px;
+  background-color: bisque;
+  opacity: 0.4;
+}
+
+.icon-box {
+  margin: 30px;
+  display: grid;
+  grid-template-columns: repeat(3, 66px);
+  gap: 20px;
+}
+
+.icon img {
+  width: 60px;
+  height: 60px;
+  border-radius: 10px;
 }
 
 li {
@@ -216,18 +240,23 @@ li button {
 }
 
 /* quote */
-#quote {
-  position: absolute;
-  bottom: 20px;
-  left: 33.3%;
-  padding: 20px;
-}
-
-#quote span {
-  font-size: 18px;
+.quote-style {
+  display: flex;
+  justify-content: center;
   color: white;
+  margin-top: 50px;
+  font-size: 20px;
 }
 
-#quote span:first-child {
+span:first-child {
   margin-right: 30px;
+}
+
+/* weather */
+.weather-class {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin: 10px 50px 0 0;
+  color: white;
 }
