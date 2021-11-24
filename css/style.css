@@ -173,6 +173,18 @@ input::placeholder {
   align-items: center;
 }
 
+#todo-list {
+  overflow: scroll;
+  -ms-overflow-style: none;
+  border: 2px solid bisque;
+  width: 300px;
+  height: 350px;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
 li {
   margin-bottom: 10px;
   animation: fadeIn 0.8s linear;
