@@ -1,3 +1,3 @@
 # To-do_List 
 
-https://choi-hyunho.github.io/to-do_list/?
+https://choi-hyunho.github.io/to-do_list/
